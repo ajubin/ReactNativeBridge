@@ -1,0 +1,3 @@
+rootProject.name = 'TCWithReact'
+
+include ':app'
