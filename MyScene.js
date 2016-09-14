@@ -1,8 +1,7 @@
-/**
- * Created by jeanjulien on 14/09/2016.
- */
+'use strict';
+
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, NativeModules } from 'react-native';
 
 export default class MyScene extends Component {
     static get defaultProps() {
@@ -20,6 +19,10 @@ export default class MyScene extends Component {
     })
   }
     render() {
+        NativeModules.TCWrapper.addParameter("#EVENT#", "screen");
+        NativeModules.TCWrapper.addParameter("#PAGE_NAME#", "MyScene");
+        NativeModules.TCWrapper.execute();
+
         return (
             <View style={ styles.container }>
                 <Text style={ styles.heading }>Hello from Main</Text>
@@ -43,8 +46,8 @@ var styles = StyleSheet.create({
         height:60,
         //justifyContent: 'center',
         backgroundColor: '#efefef',
-        alignItems: 'center',
-        justifyContent: 'center'
+        alignItems: 'center'
+        //justifyContent: 'center'
     },
     buttonText: {
         fontSize:20

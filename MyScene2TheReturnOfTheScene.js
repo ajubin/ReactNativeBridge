@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight , NativeModules } from 'react-native';
 
 export default class MyScene2TheReturnOfTheScene extends Component {
     static get defaultProps() {
         return {
-            title: 'MyScene'
+            title: 'MyScene2TheReturnOfTheScene'
         };
     }
 
     render() {
+        NativeModules.TCWrapper.addParameter("#EVENT#", "screen");
+        NativeModules.TCWrapper.addParameter("#PAGE_NAME#", "MyScene2TheReturnOfTheScene");
+        NativeModules.TCWrapper.execute();
+
         return (
             <View style={ styles.container }>
                 <Text>Hi! My name is {this.props.title}.</Text>
@@ -32,8 +36,8 @@ var styles = StyleSheet.create({
         height:60,
         //justifyContent: 'center',
         backgroundColor: '#efefef',
-        alignItems: 'center',
-        justifyContent: 'center'
+        alignItems: 'center'
+        //justifyContent: 'center'
     },
     buttonText: {
         fontSize:20

@@ -1,12 +1,15 @@
 'use strict';
 
+import { NativeModules } from 'react-native';
+module.exports = NativeModules.TCWrapper;
+
 var ReactNat = require('react-native');
 var {
-    AppRegistry,
-    Navigator,
+      AppRegistry,
+      Navigator,
     } = ReactNat;
 
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import MyScene from './MyScene';
 import MyScene2TheReturnOfTheScene from "./MyScene2TheReturnOfTheScene";
 
@@ -22,6 +25,7 @@ var TCWithReact = React.createClass({
   },
 
   render() {
+    NativeModules.TCWrapper.initTagCommander(1263, 39);
     return (
         <Navigator
             style={{ flex:1 }}
