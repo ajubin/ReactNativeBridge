@@ -24,6 +24,7 @@ public class MainApplication extends Application implements ReactApplication
     {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+          // We add our package to the list
           new TCReactPackage()
       );
     }

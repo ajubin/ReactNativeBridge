@@ -3,6 +3,8 @@
  * https://github.com/facebook/react-native
  * @flow
  */
+import { NativeModules } from 'react-native';
+module.exports = NativeModules.TCWrapper;
 
 import React, { Component } from 'react';
 import {
@@ -14,6 +16,7 @@ import {
 
 class TCWithReact extends Component {
   render() {
+    NativeModules.TCWrapper.initTagCommander(1263, 39);
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
