@@ -4,7 +4,7 @@ A bridge to React Native
 TagCommander's SDK being build for native platforms, it is not available to use in React Native. But like all the non-native technologies, React has a way to make a connection between native libraries and the language it is using. This is called a Bridge and this document is there to explain how it is done and used.
 
 
-I followed the steps as described in this links: 
+The following links served as a base for this project: 
 
 * http://facebook.github.io/react-native/docs/native-modules-android.html
 * https://shift.infinite.red/native-modules-for-react-native-android-ac05dbda800d
