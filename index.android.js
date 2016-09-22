@@ -11,7 +11,7 @@ var {
 
 import React, { Component } from 'react';
 import MyScene from './MyScene';
-import MyScene2TheReturnOfTheScene from "./MyScene2TheReturnOfTheScene";
+import MySecondScene from "./MySecondScene";
 
 var TCWithReact = React.createClass({
 
@@ -20,7 +20,7 @@ var TCWithReact = React.createClass({
       return <MyScene navigator={navigator} {...route.passProps}  />
     }
     if(route.name == 'Home') {
-      return <MyScene2TheReturnOfTheScene navigator={navigator} {...route.passProps}  />
+      return <MySecondScene navigator={navigator} {...route.passProps}  />
     }
   },
 

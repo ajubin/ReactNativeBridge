@@ -19,14 +19,14 @@ export default class MyScene extends Component {
     })
   }
     render() {
-        NativeModules.TCWrapper.addParameter("#EVENT#", "screen");
-        NativeModules.TCWrapper.addParameter("#PAGE_NAME#", "MyScene");
-        NativeModules.TCWrapper.execute();
+        NativeModules.TCWrapper.addData("#EVENT#", "screen");
+        NativeModules.TCWrapper.addData("#PAGE_NAME#", "MyScene");
+        NativeModules.TCWrapper.sendData();
 
         return (
             <View style={ styles.container }>
                 <Text style={ styles.heading }>Hello from Main</Text>
-                <TouchableHighlight style={ styles.button } onPress={ () => this._navigate('YOYOYOYOYO') }>
+                <TouchableHighlight style={ styles.button } onPress={ () => this._navigate('GO GO GO') }>
                     <Text style={ styles.buttonText }>GO GO GO</Text>
                 </TouchableHighlight>
             </View>

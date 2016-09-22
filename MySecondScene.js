@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableHighlight , NativeModules } from 'react-native';
 
-export default class MyScene2TheReturnOfTheScene extends Component {
+export default class MySecondScene extends Component {
     static get defaultProps() {
         return {
-            title: 'MyScene2TheReturnOfTheScene'
+            title: 'MySecondScene'
         };
     }
 
     render() {
-        NativeModules.TCWrapper.addParameter("#EVENT#", "screen");
-        NativeModules.TCWrapper.addParameter("#PAGE_NAME#", "MyScene2TheReturnOfTheScene");
-        NativeModules.TCWrapper.execute();
+        NativeModules.TCWrapper.addData("#EVENT#", "screen");
+        NativeModules.TCWrapper.addData("#PAGE_NAME#", "MySecondScene");
+        NativeModules.TCWrapper.sendData();
 
         return (
             <View style={ styles.container }>

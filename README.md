@@ -13,8 +13,18 @@ I followed the steps as described in this links:
 
 The samples will be separated for Android and iOS.
 
+We implemented the three most important methods of the SDK here. The initialize method, a method to add data and the one to send all those data. It should covers around 90% of client's usages. If you need more, please contact the person in charge of your project at Tag Commander.
+
 Android
 =======
+
+Important files
+---------------
+
+in /android/app/src/main/java/com/tcwithreact/ please check:
+
+* TCReactPackage.java   
+* TCWrapper.java
 
 Steps
 -----
@@ -39,18 +49,16 @@ It is possible that gradle doesn't compile automitically with the jar for some r
 ReactPackage
 ------------
 
-You might already use one, but since the project I made only use TagCommander I created one for only this purpose. You can find the file TCReactPackage.java associated with this documentation.
+You might already use one, but since this project only use TagCommander we created one for this purpose only. You can find the file TCReactPackage.java associated with this documentation.
 
-In my case it's only use it to be linking our module to the NativeModules.
+Here, it's only used to link our module to the NativeModules.
 
 ReactContextBaseJavaModule
 --------------------------
 
 Here is the main part about the bridging process. We have a class that call directly the native SDK and you can make "React visible" the methods you implement there.
 
-We implemented the three most important methods of the SDK here. The initialize method, and method to add data and the one to send all those data. It should covers around 90% of client's usages. If you need more, it is pretty easy to add more. Don't hesitate to contact us if you need anything.
-
-I called this class TCWrapper.java, you can check it for a more detailed view of the bridge.
+This class is called TCWrapper.java, you can check it for a more detailed view of the bridge.
 
 MainApplication
 ---------------
@@ -71,6 +79,15 @@ In our sample, here is what we have done :
 
 iOS
 ===
+
+Important files
+---------------
+
+in /ios/ please check:
+
+* TCWrapper.h   
+* TCWrapper.m
+
 
 Steps
 -----
