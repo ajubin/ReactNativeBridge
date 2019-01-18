@@ -80,7 +80,7 @@ In our sample, here is what we have done :
 iOS
 ===
 
-**For react-native version under 0.4 please use release 1.1.0.**
+**For react-native version above 0.4 please use release 1.1.0.**
 
 Important files
 ---------------
