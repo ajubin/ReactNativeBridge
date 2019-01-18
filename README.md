@@ -80,6 +80,8 @@ In our sample, here is what we have done :
 iOS
 ===
 
+**For react-native version under 0.4 please use release 1.1.0.**
+
 Important files
 ---------------
 
@@ -100,10 +102,11 @@ Steps
 Add Library and Wrapper
 -----------------------
 
-Open XCode and simply copy the file inside "Release-universal" into the "Libraries" folder, you can use the option "Copy if needed". XCode will do everything else.
+Open XCode and simply copy the directory "include" into the "Libraries" folder, you can use the option "Copy if needed". XCode will do everything else. Do the same for libTagCommander.a.
 
-After the copy past the TCWrapper.h and TCWrapper.m in your project sources and it's done.
+Do the same the TCWrapper.h and TCWrapper.m in your project sources and it's done.
 
+Take a look at the given ios project to see the setup.
 
 Calling the bridges
 ===================
