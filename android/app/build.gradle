@@ -83,7 +83,7 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 26
     buildToolsVersion "23.0.1"
 
     defaultConfig {
@@ -129,7 +129,7 @@ dependencies {
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile 'com.google.android.gms:play-services-location:8.4.0'
     compile files('libs/TagCommander.jar')
-    compile "com.android.support:appcompat-v7:23.0.1"
+    compile "com.android.support:appcompat-v7:26.0.1"
     compile "com.facebook.react:react-native:+"  // From node_modules
 }
 
