@@ -1,3 +1,5 @@
+**For react-native version above 0.4 please use release 1.1.1.**
+
 A bridge to React Native
 ========================
 
@@ -79,8 +81,6 @@ In our sample, here is what we have done :
 
 iOS
 ===
-
-**For react-native version above 0.4 please use release 1.1.0.**
 
 Important files
 ---------------
