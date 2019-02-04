@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <TCCore/ITCDynamicStore.h>
 
-#import "TCDynamicStore.h"
-#import "ITCDynamicStore.h"
+@class TCDynamicStore;
 
 @interface TCAppVars : NSObject<ITCDynamicStore, NSCoding>
 

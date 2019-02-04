@@ -9,18 +9,18 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "generated.h"
+#import <TCCore/TCMacros.h>
+#import <TCCore/ITCDynamicStore.h>
+#import <TCCore/TCEventSender.h>
+#import <TCCore/TCEventListener.h>
+#import <TCCore/ETCPrivacyState.h>
 
-#import "TCMacros.h"
-#import "ITCDynamicStore.h"
-#import "TCEventSender.h"
-
-@class TCInitialisation;
+@class TCSDKInitialisation;
 @class TCDynamicStore;
 @class TCAppVars;
 @class TCProduct;
 
-@interface TagCommander : NSObject <ITCDynamicStore, ITCEventSenderDelegate>
+@interface TagCommander : NSObject <ITCDynamicStore, ITCEventSenderDelegate, ITCEventListenerDelegate>
 
 /**
 * Designated initializer.
@@ -39,18 +39,23 @@
 - (void) addData: (NSString *) key withProduct: (TCProduct *) product;
 
 - (NSString *) getPostData: (TCAppVars *) appVars;
+- (void) enableRunningInBackground;
+
+- (void) deactivateSDK;
+- (void) activateSDK;
 
 #pragma mark - public properties
 @property (nonatomic, assign) int containerID;
 @property (nonatomic, assign) int siteID;
 @property (nonatomic, assign) int numberOfProducts;
 @property (nonatomic, retain) NSString *url;
+@property (nonatomic, assign) ETCPrivacyState enableSDK;
 
 @property (nonatomic, retain) TCDynamicStore *dynamicStore;
 @property (nonatomic, retain) TCDynamicStore *permanentStore;
 @property (nonatomic, retain) TCEventSender *senderDelegate;
+@property (nonatomic, retain) TCEventListener *listenerDelegate;
 
-@property (nonatomic, retain) NSOperationQueue *queue;
-@property (nonatomic, strong) TCInitialisation *initialisation;
+@property (nonatomic, strong) TCSDKInitialisation *initialisation;
 
 @end

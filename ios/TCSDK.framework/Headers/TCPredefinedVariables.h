@@ -4,13 +4,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ITCDynamicStore.h"
-#import "TCDynamicStore.h"
+#import <TCCore/ITCDynamicStore.h>
+#import <TCCore/TCDynamicStore.h>
 
-#import "TCSingleton.h"
-#import "TCMacros.h"
-
-#import "generated.h"
+#import <TCCore/TCSingleton.h>
+#import <TCCore/TCMacros.h>
 
 @interface TCPredefinedVariables : TCSingleton <ITCDynamicStore>
 
@@ -56,9 +54,9 @@ SINGLETON_CLASS_H(TCPredefinedVariables)
 - (NSString *) timestampCurrentVisitMs;
 - (NSString *) timestampLastCall;
 - (NSString *) timestampLastCallMs;
-- (BOOL) isAdvertisingTrackingEnable;
 
 @property (nonatomic, retain) TCDynamicStore *dynamicStore;
+- (void) firstExecute;
 
 @property (nonatomic, assign) bool isBackground;
 @property (nonatomic, assign) int totalForegroundTransitions;
@@ -69,7 +67,6 @@ SINGLETON_CLASS_H(TCPredefinedVariables)
 @property (nonatomic, assign) unsigned long long lastTime;
 @property (nonatomic, assign) unsigned long long startUsage;
 @property (nonatomic, retain) NSString *pid;
-
 @property (nonatomic, assign) unsigned long long visitDuration;
 
 @end

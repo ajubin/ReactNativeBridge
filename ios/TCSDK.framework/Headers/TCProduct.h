@@ -18,9 +18,9 @@
 
 @property (nonatomic, retain) NSString *ID;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic, assign) NSString *quantity;
-@property (nonatomic, assign) NSString *category;
-@property (nonatomic, assign) NSString *price;
+@property (nonatomic, retain) NSString *quantity;
+@property (nonatomic, retain) NSString *category;
+@property (nonatomic, retain) NSString *price;
 @property (nonatomic, retain) NSString *priceATI;
 @property (nonatomic, retain) NSString *discountATI;
 @property (nonatomic, retain) NSString *priceTF;
