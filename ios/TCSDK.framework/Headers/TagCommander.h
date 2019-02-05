@@ -41,15 +41,15 @@
 - (NSString *) getPostData: (TCAppVars *) appVars;
 - (void) enableRunningInBackground;
 
-- (void) deactivateSDK;
-- (void) activateSDK;
+- (void) disableSDK;
+- (void) enableSDK;
 
 #pragma mark - public properties
 @property (nonatomic, assign) int containerID;
 @property (nonatomic, assign) int siteID;
 @property (nonatomic, assign) int numberOfProducts;
 @property (nonatomic, retain) NSString *url;
-@property (nonatomic, assign) ETCPrivacyState enableSDK;
+@property (nonatomic, assign) ETCPrivacyState privacyState;
 
 @property (nonatomic, retain) TCDynamicStore *dynamicStore;
 @property (nonatomic, retain) TCDynamicStore *permanentStore;

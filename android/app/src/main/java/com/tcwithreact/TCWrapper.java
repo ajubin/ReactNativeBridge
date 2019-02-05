@@ -4,10 +4,8 @@ import android.util.Log;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.tagcommander.lib.TCDebug;
 import com.tagcommander.lib.TagCommander;
-import com.tagcommander.lib.ETCLogOutput;
-
+import com.tagcommander.lib.core.TCDebug;
 import java.util.EnumSet;
 
 public class TCWrapper extends ReactContextBaseJavaModule

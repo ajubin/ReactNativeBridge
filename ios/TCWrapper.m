@@ -4,8 +4,7 @@
 //
 
 #import "TCWrapper.h"
-#import "include/TCState.h"
-#import "include/TCLogger.h"
+#import <TCCore/TCDebug.h>
 
 @implementation TCWrapper
 
