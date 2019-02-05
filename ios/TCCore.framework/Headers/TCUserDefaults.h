@@ -7,7 +7,7 @@
 
 @interface TCUserDefaults : NSObject
 
-+ (void) saveInfoToUserDefaults: (NSString *)info forLabel: (NSString *)label;
-+ (NSString *) retrieveInfoFromUserDefaults: (NSString *)label;
++ (void) saveInfoToUserDefaults: (NSString *)info forLabel: (NSString *) label;
++ (NSString *) retrieveInfoFromUserDefaults: (NSString *) label;
 
 @end

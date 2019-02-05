@@ -5,7 +5,7 @@
 
 #import <Foundation/Foundation.h>
 #import <React/RCTBridgeModule.h>
-#import "include/TagCommander.h"
+#import <TCSDK/TagCommander.h>
 
 @interface TCWrapper : NSObject <RCTBridgeModule>
 

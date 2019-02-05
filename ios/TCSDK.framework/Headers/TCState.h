@@ -8,22 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
-#import "TCMacros.h"
-
-#import "ITCEventSenderDelegate.h"
-#import "TCSingleton.h"
-#import "TCLog.h"
+#import <TCCore/TCSingleton.h>
+#import <TCCore/ITCEventSenderDelegate.h>
+#import <TCCore/TCMacros.h>
+#import <TCCore/TCLog.h>
 
 @class TCEventSender;
 @class UIApplication;
-@class TCReachability;
 
 @interface TCState : TCSingleton <ITCEventSenderDelegate>
 {
 @private
-    TCReachability *reachability;
-
     BOOL locationAvailable;
     double tcLongitude;
     double tcLatitude;
@@ -31,16 +26,9 @@
 
 SINGLETON_CLASS_H(TCState)
 
-#pragma mark - Debug methods
-- (void) setDebugForLevel: (TCLogLevel) level andOutput: (TCLogOutput) output;
-- (struct TCDebugInformation) getDebug;
-
 #pragma mark - Background delegates
 - (void) didEnterBackground: (UIApplication *) application;
 - (void) willEnterForeground: (UIApplication *) application;
-
-#pragma mark - Reachability
-- (BOOL) isInternetReachable;
 
 #pragma mark - Location
 - (void) setLocationAvailable: (BOOL) locationAvailable;
@@ -56,10 +44,5 @@ SINGLETON_CLASS_H(TCState)
 - (id) reinit;
 
 @property (nonatomic, retain) TCEventSender *senderDelegate;
-
-// Debug properties
-@property (nonatomic, assign) struct TCDebugInformation debugInformation;
-@property (nonatomic, assign) BOOL testMode;
-@property (nonatomic, assign) BOOL blockHTTPOperations;
 
 @end

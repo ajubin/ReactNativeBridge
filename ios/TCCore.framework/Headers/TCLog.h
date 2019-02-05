@@ -20,18 +20,4 @@ typedef enum TCLogLevel
     TCLogLevel_None,
 } TCLogLevel;
 
-typedef enum TCLogOutput
-{
-    TCLogOutput_NoOutput,
-    TCLogOutput_Console,
-    TCLogOutput_File,
-    TCLogOutput_ConsoleFile,
-} TCLogOutput;
-
-struct TCDebugInformation
-{
-    TCLogLevel logLevel;
-    TCLogOutput logOutput;
-};
-
 #endif

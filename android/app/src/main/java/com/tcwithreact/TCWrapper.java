@@ -4,10 +4,8 @@ import android.util.Log;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.tagcommander.lib.TCDebug;
 import com.tagcommander.lib.TagCommander;
-import com.tagcommander.lib.ETCLogOutput;
-
+import com.tagcommander.lib.core.TCDebug;
 import java.util.EnumSet;
 
 public class TCWrapper extends ReactContextBaseJavaModule
@@ -38,7 +36,7 @@ public class TCWrapper extends ReactContextBaseJavaModule
          * VERBOSE is recommended during test as it prints information
          * that helps figuring out what is working and what is not
          */
-        TCDebug.setDebugLevelAndOutput(Log.VERBOSE, EnumSet.of(ETCLogOutput.CONSOLE));
+        TCDebug.setDebugLevel(Log.VERBOSE);
         TCDebug.setNotificationLog(true);
 
         /*
@@ -77,5 +75,35 @@ public class TCWrapper extends ReactContextBaseJavaModule
         }
 
         TC.sendData();
+    }
+
+    @ReactMethod
+    /**
+     * This will call disableSDK on TagCommander's instance after checking if it's been initialized.
+     */
+    public void disableSDK()
+    {
+        if (TC == null)
+        {
+            Log.e("TCWrapper", "Error, the TagCommander instance was not instantiated.\nPlease call initTagCommander(int siteID, int containerID)");
+            return;
+        }
+
+        TC.disableSDK();
+    }
+
+    @ReactMethod
+    /**
+     * This will call enableSDK on TagCommander's instance after checking if it's been initialized.
+     */
+    public void enableSDK()
+    {
+        if (TC == null)
+        {
+            Log.e("TCWrapper", "Error, the TagCommander instance was not instantiated.\nPlease call initTagCommander(int siteID, int containerID)");
+            return;
+        }
+
+        TC.enableSDK();
     }
 }
