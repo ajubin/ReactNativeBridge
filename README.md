@@ -23,15 +23,15 @@ Android
 Important files
 ---------------
 
-in /android/app/src/main/java/com/tcwithreact/ please check:
+in /android/ please check:
 
-* TCReactPackage.java   
-* TCWrapper.java
+[TCReactPackage.java](https://github.com/TagCommander/ReactNativeBridge/tree/master/android/app/src/main/java/com/tcwithreact/TCReactPackage.java)
+[TCWrapper.java](https://github.com/TagCommander/ReactNativeBridge/tree/master/android/app/src/main/java/com/tcwithreact/TCWrapper.java)
 
 Steps
 -----
 
-* Copy TagCommander's Jar inside your android project.
+* Copy core-release.aar and SDK-release.aar inside your android project.
 * Create a ReactPackage, a wrapper object grouping many modules (both native and JavaScript) together, and include it in the getPackages method of MainActivity.
 * Create a Java class extending ReactContextBaseJavaModule that implements the desired functionality and register it with our ReactPackage.
 * Override the getName method in the aforementioned class. This will be the name of the native module in JavaScript.
@@ -42,11 +42,13 @@ Copy the Jar
 ------------
 
 You first need to create a libs folder : android/app/libs
-Then take the Jar from TagCommander and copy it inside.
+Then take core-release.aar and SDK-release.aar from TagCommander and copy them inside.
 
-It is possible that gradle doesn't compile automitically with the jar for some reasons. If there is any issue, open build.gradle and add the following line inside the dependencies.
+It is possible that gradle doesn't compile automatically with the aar. If there is any issue, open build.gradle (the one from the app, not the one from the project)
+and add the following line inside the dependencies.
 
-	compile files('libs/TagCommander.jar')
+    implementation(name: 'core-release', ext: 'aar')
+    implementation(name: 'SDK-release', ext: 'aar')
 
 ReactPackage
 ------------
@@ -65,7 +67,7 @@ This class is called TCWrapper.java, you can check it for a more detailed view o
 MainApplication
 ---------------
 
-In Android you need a final step which is instanciating the class you use for the bridge in getPackages().
+In Android you need a final step which is instantiating the class you use for the bridge in getPackages().
 
 In our sample, here is what we have done :
 
@@ -87,14 +89,13 @@ Important files
 
 in /ios/ please check:
 
-* TCWrapper.h   
-* TCWrapper.m
-
+[TCWrapper.h](https://github.com/TagCommander/ReactNativeBridge/blob/master/ios/TCWrapper.h)
+[TCWrapper.m](https://github.com/TagCommander/ReactNativeBridge/blob/master/ios/TCWrapper.m)
 
 Steps
 -----
 
-* Add the library to your project
+* Add TCCore.framework and TCSDK.framework to your project
 * Add TCWrapper to your project
 * Done
 
@@ -102,7 +103,12 @@ Steps
 Add Library and Wrapper
 -----------------------
 
-Open XCode and simply copy the directory "include" into the "Libraries" folder, you can use the option "Copy if needed". XCode will do everything else. Do the same for libTagCommander.a.
+Open XCode and drag and drop both frameworks into your project, use the option "Copy if needed". XCode will do everything else.
+
+But XCode don't always do things properly, so please check that you can find TCCore.framework and TCSDK.framework in the project:
+
+    - in General check "Linked Frameworks and Librairies" and in "Embeded Binairies"
+    - in Build Phases check "Link with Binary with Libraries"
 
 Do the same the TCWrapper.h and TCWrapper.m in your project sources and it's done.
 

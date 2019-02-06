@@ -26,6 +26,10 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		906451EE220888CB000D74C2 /* TCSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906451EC220888CB000D74C2 /* TCSDK.framework */; };
 		906451EF220888CB000D74C2 /* TCCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906451ED220888CB000D74C2 /* TCCore.framework */; };
+		90D77011220AF9E100F808A6 /* TCCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906451ED220888CB000D74C2 /* TCCore.framework */; };
+		90D77012220AF9E100F808A6 /* TCCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 906451ED220888CB000D74C2 /* TCCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		90D77013220AF9E100F808A6 /* TCSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906451EC220888CB000D74C2 /* TCSDK.framework */; };
+		90D77014220AF9E100F808A6 /* TCSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 906451EC220888CB000D74C2 /* TCSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -269,6 +273,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		90D77036220AF9E200F808A6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				90D77014220AF9E100F808A6 /* TCSDK.framework in Embed Frameworks */,
+				90D77012220AF9E100F808A6 /* TCCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
@@ -312,6 +331,7 @@
 			files = (
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
+				90D77013220AF9E100F808A6 /* TCSDK.framework in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
 				906451EF220888CB000D74C2 /* TCCore.framework in Frameworks */,
@@ -321,6 +341,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				906451EE220888CB000D74C2 /* TCSDK.framework in Frameworks */,
+				90D77011220AF9E100F808A6 /* TCCore.framework in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,6 +554,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				90D77036220AF9E200F808A6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
