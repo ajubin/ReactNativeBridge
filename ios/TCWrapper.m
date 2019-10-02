@@ -8,6 +8,11 @@
 
 @implementation TCWrapper
 
+- (dispatch_queue_t)methodQueue
+{
+  return dispatch_get_main_queue();
+}
+
 RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(initTagCommander: (int) siteID andContainerID: (int) containerID)
