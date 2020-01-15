@@ -1,4 +1,5 @@
-**For react-native version above 0.4 please use release 1.1.1.**
+**For react-native version above 0.4 please use release 1.1.1. for ios**
+**Master works well for android**
 
 A bridge to React Native
 ========================
